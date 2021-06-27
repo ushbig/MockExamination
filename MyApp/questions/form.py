@@ -7,7 +7,7 @@ class ExamQuestion(Form):
     option_b = TextField('Name:',[validators.Length(min=5, max=20)])
     option_c = TextField('Name:',[validators.Length(min=5, max=20)])
     option_d = TextField('Name:',[validators.Length(min=5, max=20)])
-     = TextField('Name:',[validators.Length(min=5, max=20)])
+    answer = TextField('Name:',[validators.Length(min=5, max=20)])
     
     
 

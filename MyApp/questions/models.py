@@ -17,11 +17,11 @@ class  Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     
     question =db.Column(db.String(150), nullable=False, unique=True)
-    option_a =db.Column(db.String(100), nullable=False, unique=True)
-    option_b =db.Column(db.String(100), nullable=False, unique=True)
-    option_c =db.Column(db.String(100), nullable=False, unique=True)
-    option_d =db.Column(db.String(100), nullable=False, unique=True)
-    correct_option=db.Column(db.)
+    option_a =db.Column(db.String(100), nullable=False, unique=False)
+    option_b =db.Column(db.String(100), nullable=False, unique=False)
+    option_c =db.Column(db.String(100), nullable=False, unique=False)
+    option_d =db.Column(db.String(100), nullable=False, unique=False)
+    correct_option=db.Column(db.String(100), nullable=False, unique=False)
     course_id = db.Column(db.Integer,db.ForeignKey('Course.id'))
     course = db.relationship('Course', backref=db.backref('courses', lazy=True))
 
