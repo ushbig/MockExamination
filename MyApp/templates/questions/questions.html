@@ -1,0 +1,49 @@
+{%extends 'questions/layout.html' %}
+
+{%block content %}
+{% from 'adminH/_formhelpers.html' import render_field %}
+<div class="">
+    <div class="row m-0">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% include 'message.html' %}
+            
+            
+
+
+            {% if addCourse %}
+            
+            <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
+            <form  action="" enctype="multipart/form-data" method="POST">
+                {{ form.csrf_token }}
+                {{render_field(form.course, class="form-control")}}
+        
+                
+    
+                <p class="text-center"><input type='submit' value='Add Course ' class='btn btn-primary'></p>
+
+                </form>
+                
+                <a href="" class="btn btn-warning " style="margin-top: -65px;margin-left: 140px;">Cancel</a>
+                {% else %}
+                <h4 class="h3 mt-3 text-center text-primary"> Add Question</h4>
+                <form action="" enctype="multipart/form-data" method="POST">
+                    {{ form.csrf_token }}
+                    {{render_field(form.course, class="form-control")}}
+                    {{render_field(form.course, class="form-control")}}
+                    {{render_field(form.course, class="form-control")}}
+                    {{render_field(form.course, class="form-control")}}
+                    {{render_field(form.course, class="form-control")}}
+                    {{render_field(form.course, class="form-control")}}
+                </form>
+                <a href="" class="btn btn-warning " style="margin-top: -65px;margin-left: 160px;">Cancel</a>
+                {% endif %}
+
+            
+    </div>
+        <div class="col-md-4"></div>
+    </div>
+    
+    
+</div>
+{% endblock content %}

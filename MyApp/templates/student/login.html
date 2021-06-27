@@ -1,0 +1,29 @@
+{%extends 'student/layout.html' %}
+
+{%block content %}
+{% from 'adminH/_formhelpers.html' import render_field %}
+<div class="">
+    <div class="row m-0">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% include 'message.html' %}
+            <h4 class="h3 mt-3 text-center text-primary"> Student  Log in</h4>
+            
+            <form  action="" enctype="multipart/form-data" method="POST">
+            {{ form.csrf_token }}
+            {{render_field(form.email, class="form-control")}}
+            {{render_field(form.password, class="form-control")}}
+    
+            
+
+            <p class="text-center"><input type='submit' value='Login ' class='btn btn-primary'></p>
+
+            
+        </form>
+    </div>
+        <div class="col-md-4"></div>
+    </div>
+    
+    
+</div>
+{% endblock content %}
