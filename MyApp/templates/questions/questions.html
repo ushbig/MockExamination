@@ -11,7 +11,7 @@
             
 
 
-            {% if addCourse %}
+            {% if AddQuestions %}
             
             <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
             <form  action="" enctype="multipart/form-data" method="POST">
@@ -24,21 +24,13 @@
 
                 </form>
                 
-                <a href="" class="btn btn-warning " style="margin-top: -65px;margin-left: 140px;">Cancel</a>
-                {% else %}
-                <h4 class="h3 mt-3 text-center text-primary"> Add Question</h4>
-                <form action="" enctype="multipart/form-data" method="POST">
-                    {{ form.csrf_token }}
-                    {{render_field(form.course, class="form-control")}}
-                    {{render_field(form.course, class="form-control")}}
-                    {{render_field(form.course, class="form-control")}}
-                    {{render_field(form.course, class="form-control")}}
-                    {{render_field(form.course, class="form-control")}}
-                    {{render_field(form.course, class="form-control")}}
-                </form>
-                <a href="" class="btn btn-warning " style="margin-top: -65px;margin-left: 160px;">Cancel</a>
-                {% endif %}
+                <a href="" class="btn btn-warning ">Cancel</a>
+                
+                {%  else %}
 
+                    <h1>It is 0000</h1>
+                {% endif %}
+                
             
     </div>
         <div class="col-md-4"></div>

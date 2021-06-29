@@ -5,12 +5,12 @@ from .models import Course,Question
 from os import environ
 
 
-@app.route('/Add Course', methods=['POST','GET'])
-def addCourse():
+@app.route('/addcourse', methods=['POST','GET'])
+def addcourse():
 
     form = AddCourse(request.form)
 
-    if request.method =='POST':
+    if request.method =='POST' and form.validate():
         course = Course(course=form.course.data,)
         db.session.add(course)
         db.session.commit()
@@ -19,8 +19,9 @@ def addCourse():
 
 
 
-@app.route('/Add Questions')
+@app.route('/AddQuestions')
 def AddQuestion():
+    form = ExamQuestion(request.form)
 
 
-    return render_template('questions/questions.html')
+    return render_template('questions/questions.html', form=form)
