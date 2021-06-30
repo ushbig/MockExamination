@@ -11,10 +11,31 @@
             
 
 
-            {% if AddQuestions %}
+            {% if ExamQuestion %}
             
-            <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
-            <form  action="" enctype="multipart/form-data" method="POST">
+
+            <h4 class="h3 mt-3 text-center text-primary"> Add Question</h4>
+                <form action="" enctype="multipart/form-data" method="POST">
+                    {{ form.csrf_token }}
+                    {{render_field(form.question, class="form-control")}}
+                    {{render_field(form.option_a, class="form-control")}}
+                    {{render_field(form.option_b, class="form-control")}}
+                    {{render_field(form.option_c, class="form-control")}}
+                    {{render_field(form.option_d, class="form-control")}}
+                    {{render_field(form.answer, class="form-control")}}
+                    <p class="text-center"><input type='submit' value='Add Course ' class='btn btn-primary'></p>
+                </form>
+                
+                {%  else %}
+
+
+                
+                
+
+                    
+                {% endif %}
+                <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
+                <form  action="" enctype="multipart/form-data" method="POST">
                 {{ form.csrf_token }}
                 {{render_field(form.course, class="form-control")}}
         
@@ -25,12 +46,6 @@
                 </form>
                 
                 <a href="" class="btn btn-warning ">Cancel</a>
-                
-                {%  else %}
-
-                    <h1>It is 0000</h1>
-                {% endif %}
-                
             
     </div>
         <div class="col-md-4"></div>

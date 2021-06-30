@@ -11,17 +11,21 @@ def addcourse():
     form = AddCourse(request.form)
 
     if request.method =='POST' and form.validate():
-        course = Course(course=form.course.data,)
-        db.session.add(course)
+        cours = Course(cours=form.course.data)
+        db.session.add(cours)
         db.session.commit()
 
     return render_template('questions/questions.html', form=form)
 
 
 
-@app.route('/AddQuestions')
-def AddQuestion():
-    form = ExamQuestion(request.form)
-
+@app.route('/examQuestion', methods=["POST","GET"])
+def examQuestion():
+    form = ExamQuestion()
+    if request.method =='POST' and form.validate():
+        cour = Question(cours=form.cour.data)
+        db.session.add(cour)
+        db.session.commit()
+    
 
     return render_template('questions/questions.html', form=form)
