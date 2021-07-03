@@ -15,7 +15,7 @@ def addcourse():
         db.session.add(cours)
         db.session.commit()
 
-    return render_template('questions/questions.html', form=form)
+    return render_template('questions/addcourse.html', form=form)
 
 
 
@@ -23,8 +23,8 @@ def addcourse():
 def examQuestion():
     form = ExamQuestion()
     if request.method =='POST' and form.validate():
-        cour = Question(cours=form.cour.data)
-        db.session.add(cour)
+        course = Question(cours=form.course.data)
+        db.session.add(course)
         db.session.commit()
     
 

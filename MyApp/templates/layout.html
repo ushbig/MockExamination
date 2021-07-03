@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!--External CSS-->
+    
+
     <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/basicStyle.css')}}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
 
     <title>{{title}}</title>
@@ -13,6 +18,10 @@
       dt{
         font-size: 13px;
         font-weight: 400;
+      }
+      .form_footer{
+        display: flex;
+        justify-content: center;
       }
     </style>
   </head>

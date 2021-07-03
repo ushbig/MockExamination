@@ -1,0 +1,35 @@
+{%extends 'questions/layout.html' %}
+{%block content %}
+{% from 'adminH/_formhelpers.html' import render_field %}
+    <div class="">
+        <div class="row m-0">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                {% include 'message.html' %}
+
+
+                    
+                <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
+                <form  action="" enctype="multipart/form-data" method="POST">
+                {{ form.csrf_token }}
+                {{render_field(form.course, class="form-control")}}
+        
+                <div class="form_footer" style="display: flex; justify-content: space-between;">
+                    <p class="text-center"><input type='submit' value='Add Course ' class='btn btn-primary'></p>
+                    <p><a href="{{url_for('AdminPage')}}" class="btn btn-sm btn-danger">cancel</a></p>
+                </div>
+
+                
+
+                </form>
+                
+                
+                    
+                
+        </div>
+            <div class="col-md-4"></div>
+        </div>
+        
+        
+    </div>
+{% endblock content %}

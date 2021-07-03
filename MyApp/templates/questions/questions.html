@@ -7,11 +7,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             {% include 'message.html' %}
-            
-            
 
-
-            {% if ExamQuestion %}
             
 
             <h4 class="h3 mt-3 text-center text-primary"> Add Question</h4>
@@ -23,29 +19,15 @@
                     {{render_field(form.option_c, class="form-control")}}
                     {{render_field(form.option_d, class="form-control")}}
                     {{render_field(form.answer, class="form-control")}}
-                    <p class="text-center"><input type='submit' value='Add Course ' class='btn btn-primary'></p>
+                    <p class="text-center"><input type='submit' value='ExamQuestion ' class='btn btn-primary'></p>
                 </form>
                 
-                {%  else %}
-
+                
 
                 
                 
 
-                    
-                {% endif %}
-                <h4 class="h3 mt-3 text-center text-primary"> Add course</h4>
-                <form  action="" enctype="multipart/form-data" method="POST">
-                {{ form.csrf_token }}
-                {{render_field(form.course, class="form-control")}}
-        
                 
-    
-                <p class="text-center"><input type='submit' value='Add Course ' class='btn btn-primary'></p>
-
-                </form>
-                
-                <a href="" class="btn btn-warning ">Cancel</a>
             
     </div>
         <div class="col-md-4"></div>
