@@ -13,5 +13,5 @@ class ExamQuestion(Form):
 
 
 class AddCourse(Form):
-    course = StringField('',[validators.Length(min=7, max=36)])
+    course = StringField('',[validators.Length( max=36)])
     

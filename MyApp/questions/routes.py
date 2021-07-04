@@ -11,9 +11,10 @@ def addcourse():
     form = AddCourse(request.form)
 
     if request.method =='POST' and form.validate():
-        cours = Course(cours=form.course.data)
-        db.session.add(cours)
+        course = Course(course=form.course.data)
+        db.session.add(course)
         db.session.commit()
+        return redirect(request.args.get('next') or url_for('AdminPage'))
 
     return render_template('questions/addcourse.html', form=form)
 
