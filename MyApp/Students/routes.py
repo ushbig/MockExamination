@@ -51,3 +51,9 @@ def StudentPage():
     message = session['email']
     selection = models.Course.query.all()
     return render_template('student/studentHomePage.html' , message=message , selection=selection)
+
+
+@app.route('/QuestionPage')
+def questionPage():
+    
+    return render_template('student')
