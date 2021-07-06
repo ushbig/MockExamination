@@ -1,3 +1,4 @@
+from flask_sqlalchemy import model
 from MyApp import db
 
 class  Student(db.Model):

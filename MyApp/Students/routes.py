@@ -1,7 +1,10 @@
+from MyApp.questions import models
+from flask_sqlalchemy import model
 from MyApp import app,db,bcrypt
 from flask import  Flask,render_template,session,request,url_for,redirect,flash
 from .form import StudentRegisterForm,StudentLoginForm
 from .models import Student
+from MyApp.questions import models 
 from os import environ
 
 
@@ -45,4 +48,6 @@ def StudentLogin():
 
 @app.route('/Student home page ')
 def StudentPage():
-    return render_template('student/message.html')
+    message = session['email']
+    selection = models.Course.query.all()
+    return render_template('student/studentHomePage.html' , message=message , selection=selection)

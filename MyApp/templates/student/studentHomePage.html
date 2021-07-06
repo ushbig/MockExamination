@@ -1,0 +1,18 @@
+{%extends 'questions/layout.html' %}
+
+{%block content %}
+<div class="container">
+    <div class="content">
+        {% include 'message.html' %}
+        <h1>welcome {{message}}</h1> 
+
+        <h3>Please kindly Select the Course you offer</h3>
+        {% for coures in  selection %}
+            <ul>
+                <li value="{{coures.id}}">{{coures.course}}</li>
+            </ul>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
