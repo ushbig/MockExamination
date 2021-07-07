@@ -22,10 +22,11 @@ def addcourse():
 
 @app.route('/examQuestion', methods=["POST","GET"])
 def examQuestion():
-    form = ExamQuestion()
+    form = ExamQuestion(request.form)
+    cou  = Course.query.all()
     if request.method =='POST' and form.validate():
-        course = Question(cours=form.course.data)
-        db.session.add(course)
+        cours = Question(cours=cou.course.data)
+        db.session.add(cours)
         db.session.commit()
     
 

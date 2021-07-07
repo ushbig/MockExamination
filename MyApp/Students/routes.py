@@ -1,5 +1,8 @@
+from logging import root
 from MyApp.questions import models
 from flask_sqlalchemy import model
+from tkinter import *
+from datetime import datetime
 from MyApp import app,db,bcrypt
 from flask import  Flask,render_template,session,request,url_for,redirect,flash
 from .form import StudentRegisterForm,StudentLoginForm
@@ -7,6 +10,20 @@ from .models import Student
 from MyApp.questions import models 
 from os import environ
 
+
+
+root.tk()
+root.Title('Time to go home ')
+def update_time():
+    format = '%H:%M:%S'
+    now = datetime.now().strftime(format)
+    s2 ='18:15:25'
+    message_time=datetime.strptime(s2, format) - datetime.strptime(now, format)
+    l.config(text=StringVar)
+    l.after(1000,update_time)
+
+l = Label(root, font=('calibri', 50,'bold'), background='blue', foreground='white')
+l.pack(anchor='center')
 
 
 @app.route('/')
@@ -56,4 +73,8 @@ def StudentPage():
 @app.route('/QuestionPage')
 def questionPage():
     
-    return render_template('student')
+    update_time()
+    mainloop()
+    
+    
+    return render_template('student/questionPage.html')
